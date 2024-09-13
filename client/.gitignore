@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# openAI key
+open_api_key.js
+
 # testing
 /coverage
 
