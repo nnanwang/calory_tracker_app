@@ -10,6 +10,7 @@ function Header() {
                 <Link to='/Diet-recommendation'>Diet Recommandation</Link>
                 <Link to='/calorie-calculator'>Calorie Calculator</Link>
                 <Link to='/fitness-plan'>Fitness Plan</Link>
+                <Link to='/register'>Register</Link>
             </nav>
         </header>
     )

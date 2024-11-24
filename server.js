@@ -2,12 +2,30 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
+import mongoose from 'mongoose';
+import userRoutes from './routes/user.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
-app.use(cors());
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
 
 app.use(bodyParser.json());
+
+app.use('/api/users', userRoutes);
+
+// connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/calorieDB')
+    .then(() => {
+        app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+    })
+    .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -56,9 +74,3 @@ app.get('/api/food-nutritions', (req, res) => {
 
 });
 
-
-
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});

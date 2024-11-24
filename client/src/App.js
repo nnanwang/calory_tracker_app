@@ -9,6 +9,7 @@ import SearchFoodNutritions from './pages/SearchFoodNutritions';
 import DiatRecommendation from './pages/DietRecommendation';
 import CalorieCalculator from './pages/CalorieCalculator';
 import FitnessPlan from './pages/FitnessPlan';
+import Register from './pages/Register';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -27,7 +28,8 @@ function App() {
           <Route path='/search-food-nutritions' element={<SearchFoodNutritions />}/>
           <Route path='/Diet-recommendation' element={<DiatRecommendation />} />
           <Route path='/calorie-calculator' element={<CalorieCalculator />} />
-          <Route path='/fitness-plan' element={<FitnessPlan />}/>
+          <Route path='/fitness-plan' element={<FitnessPlan />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </div>
     </Router>
